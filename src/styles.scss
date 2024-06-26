@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+// Header Styles
+.header {
+  .search-form {
+    span {
+        border-radius: 20px 0 0 20px;
+        padding: 0.375rem 0 0.375rem 0.75rem;
+        background-color: #fff;
+    }
+    input {
+        border-radius: 0 20px 20px 0;
+        border-left: 0;
+    }
+  }
+}
