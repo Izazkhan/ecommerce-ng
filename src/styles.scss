@@ -1,4 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Icons
+.icon-cart-dash {
+  background: url('../public/cart-dash.svg') center center no-repeat;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
 // Header Styles
 .header {
   .search-form {
