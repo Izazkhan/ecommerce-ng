@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-
+  constructor() {
+  }
+  ngOnInit(): void {
+    // Logic to execute on component load
+    console.log('Home component initialized');
+  }
 }

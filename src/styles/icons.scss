@@ -1,0 +1,8 @@
+.sso-icon {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    &.google {
+        background: url("../assets/images/google.svg") center center no-repeat;
+    }
+}
