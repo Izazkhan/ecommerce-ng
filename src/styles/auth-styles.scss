@@ -1,0 +1,65 @@
+.signin-root {
+    background-image: url("/assets/images/img_signin.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    .card {
+      border-radius: 1rem;
+    }
+  
+    .form-outline {
+      position: relative;
+    }
+  
+    .form-control {
+      outline: none;
+      box-shadow: none;
+    }
+  
+    // .form-label {
+    //   position: absolute;
+    //   top: 50%; /* Center label vertically */
+    //   left: 1rem; /* Position label to the left */
+    //   transform: translateY(-50%); /* Center label vertically */
+    //   cursor: text; /* Use text cursor when hovering over label */
+    //   transition: top 0.3s ease, left 0.3s ease, font-size 0.3s ease,
+    //     color 0.3s ease;
+    //   padding: 5px;
+    //   pointer-events: none;
+    //   font-size: 0.9rem; /* Adjust font size when focused or input has content */
+    //   transform-origin: 0 0;
+    // }
+  
+    // input:not(:placeholder-shown) + .form-label,
+    // .form-control:focus ~ .form-label {
+    //   padding: 5px;
+    //   top: 1px; /* Adjust top position when focused or input has content */
+    //   left: 1rem; /* Maintain left position */
+    //   font-size: 0.75rem; /* Adjust font size when focused or input has content */
+    //   background-color: #fff;
+    // }
+  
+    .hr-container {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    .hr-container hr {
+      flex: 1;
+      border: none;
+      height: 2px;
+      background-color: #ccc;
+    }
+    
+    .or-text {
+      padding: 0 10px;
+      color: #999;
+      font-weight: bold;
+    }
+    
+  }
+  
