@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -7,12 +7,22 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink, ReactiveFormsModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.scss'
+  styleUrls: ['../../../../styles/auth-styles.scss', './register.component.scss']
 })
 export class RegisterComponent {
 
-  name = new FormControl('');
-  email = new FormControl('');
-  password = new FormControl('');
+  registrationForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.registrationForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    })
+  }
+
+  onSubmit() {
+    console.log(this.registrationForm.value);
+  }
 
 }
