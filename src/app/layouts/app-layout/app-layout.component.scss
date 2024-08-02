@@ -1,0 +1,16 @@
+.icon {
+  width: 30px; /* Set the width of the icon */
+  height: 30px; /* Set the height of the icon */
+  background-image: url("/assets/images/icons.svg"); /* Reference specific icon */
+  background-size: cover;
+  background-repeat: no-repeat; /* Prevent repeating the icon */
+  display: inline-block;
+}
+
+.person {
+    background-position: 0 5px;
+}
+
+.cart {
+    background-position: -25px 0;
+}

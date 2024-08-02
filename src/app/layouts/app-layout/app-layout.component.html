@@ -24,14 +24,7 @@
             <li><a href="#" class="nav-link px-3 link-secondary">Contact us</a></li>
             <li><a href="#" class="nav-link px-3 link-secondary">Blog</a></li>
         </ul>
-        <a href="">
-            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#8D8181" class="bi bi-cart-dash"
-                viewBox="0 0 16 16">
-                <path d="M6.5 7a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1z" />
-                <path
-                    d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-            </svg>\
-        </a>
+        <a href=""><i class="icon cart"></i></a>
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 search-form" role="search">
             <div class="input-group">
                 <span class="input-group-text" id="search-addon">
@@ -50,16 +43,16 @@
         <div class="dropdown text-end">
             <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
                 data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                <!-- <img src="assets/images/google.svg" alt="mdo" width="32" height="32" class="rounded-circle"> -->
+                 <i class="icon person"></i>
             </a>
             <ul class="dropdown-menu text-small">
-                <li><a class="dropdown-item" routerLink="/login">Sign In</a></li>
-                <li><a class="dropdown-item" routerLink="/register">Sign Up</a></li>
-                <li><a class="dropdown-item" href="#"></a></li>
-                <li>
+                <li *ngIf="!isLoggedIn"><a class="dropdown-item" routerLink="/login">Sign In</a></li>
+                <li *ngIf="!isLoggedIn"><a class="dropdown-item" routerLink="/register">Sign Up</a></li>
+                <li *ngIf="isLoggedIn">
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Sign out</a></li>
+                <li *ngIf="isLoggedIn"><button class="dropdown-item" (click)="logout()">Sign out</button></li>
             </ul>
         </div>
     </header>

@@ -3,6 +3,8 @@ import { LoginComponent } from './pages/auth/login/login.component';
 import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
+import { ProfileComponent } from './pages/user/profile/profile.component';
+import { authGuard } from './helpers/guards/auth.guard';
 
 export const routes: Routes = [
     {
@@ -21,6 +23,9 @@ export const routes: Routes = [
         children: [
             {
                 path: '', component: HomeComponent
+            },
+            {
+                path: 'profile', component: ProfileComponent, canActivate: [authGuard]
             }
         ]
     }
