@@ -24,7 +24,7 @@
             <li><a href="#" class="nav-link px-3 link-secondary">Contact us</a></li>
             <li><a href="#" class="nav-link px-3 link-secondary">Blog</a></li>
         </ul>
-        <a href=""><i class="icon cart"></i></a>
+        <a href="#" class="icon cart"></a>
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 search-form" role="search">
             <div class="input-group">
                 <span class="input-group-text" id="search-addon">
@@ -41,14 +41,15 @@
             </div>
         </form>
         <div class="dropdown text-end">
-            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+            <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
                 data-bs-toggle="dropdown" aria-expanded="false">
                 <!-- <img src="assets/images/google.svg" alt="mdo" width="32" height="32" class="rounded-circle"> -->
                  <i class="icon person"></i>
             </a>
             <ul class="dropdown-menu text-small">
-                <li *ngIf="!isLoggedIn"><a class="dropdown-item" routerLink="/login">Sign In</a></li>
+                <li *ngIf="!isLoggedIn"><a class="dropdown-item" routerLink="/signin">Sign In</a></li>
                 <li *ngIf="!isLoggedIn"><a class="dropdown-item" routerLink="/register">Sign Up</a></li>
+                <li *ngIf="isLoggedIn"><a class="dropdown-item" routerLink="/profile">Account</a></li>
                 <li *ngIf="isLoggedIn">
                     <hr class="dropdown-divider">
                 </li>

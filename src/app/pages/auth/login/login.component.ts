@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   standalone: true,
   imports: [RouterLink, ReactiveFormsModule],
   templateUrl: './login.component.html',
-  styleUrls: ['../../../../styles/auth-styles.scss', './login.component.scss']
+  styleUrls:  ['./login.component.scss']
 })
 export class LoginComponent {
 
@@ -32,8 +32,7 @@ export class LoginComponent {
       // Login the user
       this.authService.login(this.loginForm.value).subscribe({
         error: () => {
-          alert('Sorry, Automatic login failed. We are redirecting you to Login screen.');
-          this.router.navigate(['/login']);
+          alert('Login failed');
         },
         next: () => {
           const intendedUrl = this.route.snapshot.queryParams['intended'] || '/profile';

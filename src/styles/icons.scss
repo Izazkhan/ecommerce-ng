@@ -2,7 +2,31 @@
     width: 32px;
     height: 32px;
     display: inline-block;
+
     &.google {
         background: url("../assets/images/google.svg") center center no-repeat;
     }
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    background-image: url("/assets/images/icons.svg");
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.person {
+    background-position: 0 0;
+}
+
+.cart {
+    background-position: -27px 0;
+}
+
+.lock {
+    width: 60px;
+    background-position: 0px -86px;
+    height: 79px;
+    background-size: 100px;
 }

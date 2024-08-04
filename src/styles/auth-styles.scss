@@ -11,7 +11,7 @@
   z-index: -1;
 }
 
-.signin-root {
+.auth-layout {
     // background-image: url("/assets/images/img_signin.png");
     // background-size: cover;
     // background-repeat: no-repeat;
@@ -30,29 +30,6 @@
       outline: none;
       box-shadow: none;
     }
-  
-    // .form-label {
-    //   position: absolute;
-    //   top: 50%; /* Center label vertically */
-    //   left: 1rem; /* Position label to the left */
-    //   transform: translateY(-50%); /* Center label vertically */
-    //   cursor: text; /* Use text cursor when hovering over label */
-    //   transition: top 0.3s ease, left 0.3s ease, font-size 0.3s ease,
-    //     color 0.3s ease;
-    //   padding: 5px;
-    //   pointer-events: none;
-    //   font-size: 0.9rem; /* Adjust font size when focused or input has content */
-    //   transform-origin: 0 0;
-    // }
-  
-    // input:not(:placeholder-shown) + .form-label,
-    // .form-control:focus ~ .form-label {
-    //   padding: 5px;
-    //   top: 1px; /* Adjust top position when focused or input has content */
-    //   left: 1rem; /* Maintain left position */
-    //   font-size: 0.75rem; /* Adjust font size when focused or input has content */
-    //   background-color: #fff;
-    // }
   
     .hr-container {
       display: flex;
@@ -79,6 +56,6 @@
 
   @media (max-width: 600px) {
     .signin-root {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
   }
