@@ -56,4 +56,9 @@ export class AuthService {
   isLoggedIn(): boolean {
     return this.getToken() !== null;
   }
+
+  forgotPasswordEmail(): Observable<any> {
+    // TODO
+    return this.http.post<any>(this.apiUrl + '/send-email', {});
+  }
 }
