@@ -1,6 +1,6 @@
 .btn-primary {
     color: #fff;
-    &:hover {
+    &:hover, &:disabled {
         color: #fff;
     }
 }

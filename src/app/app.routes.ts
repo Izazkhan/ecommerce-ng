@@ -7,6 +7,7 @@ import { ProfileComponent } from './pages/user/profile/profile.component';
 import { authGuard } from './helpers/guards/auth.guard';
 import { AuthLayoutComponent } from './pages/auth/auth-layout/auth-layout.component';
 import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './pages/auth/reset-password/reset-password.component';
 
 export const routes: Routes = [
     {
@@ -38,6 +39,11 @@ export const routes: Routes = [
                 path: 'forgot-password',
                 title: 'Forgot Password',
                 component: ForgotPasswordComponent
+            },
+            {
+                path: 'reset-password/:token',
+                title: 'Reset Password',
+                component: ResetPasswordComponent
             }
         ]
     }
