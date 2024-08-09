@@ -10,11 +10,11 @@ export class ValidationHelper {
     
     hasError(form: FormGroup, field: string, errorKey?: string): boolean {
         const control = form.get(field);
-        console.log(control, field);
         if (control && control.errors) {
             if (errorKey) {
                 return control.hasError(errorKey);
             }
+            console.log(field, 'Here', control.errors);
             return true; // Error
         }
         return false;

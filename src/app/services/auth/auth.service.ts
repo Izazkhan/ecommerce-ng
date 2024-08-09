@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -18,6 +19,11 @@ interface UserLoginRequest {
 interface UserLoginResponse {
   msg: string,
   token: string
+}
+
+interface PasswordResetRequest {
+  token: string,
+  password: string
 }
 
 @Injectable({
@@ -60,5 +66,13 @@ export class AuthService {
   resetPasswordEmail(email: string): Observable<any> {
     // TODO
     return this.http.post<any>(this.apiUrl + '/password/email', {email});
+  }
+
+  resetPassword(form: PasswordResetRequest): Observable<any> {
+    // TODO
+    return this.http.post<any>(this.apiUrl + '/password/reset', {
+      token: form.token,
+      password: form.password,
+    });
   }
 }
