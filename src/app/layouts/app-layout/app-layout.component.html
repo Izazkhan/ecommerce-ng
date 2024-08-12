@@ -1,13 +1,13 @@
 <div class="container">
     <header
         class="header d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <div class="col-md-3 mb-2 mb-md-0">
+        <div class="col-md-3 col-lg-auto mb-2 mb-md-0">
             <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none bold">
                 <strong>UrbanCraft</strong>
             </a>
         </div>
 
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <ul class="nav col-12 col-md-auto col-lg-auto mb-2 justify-content-center mb-md-0">
             <li><a href="#" class="nav-link px-3 link-body-emphasis">Home</a></li>
             <li>
                 <a class="nav-link dropdown-toggle link-secondary" href="#" id="navbarDropdownMenuLink" role="button"
@@ -24,37 +24,35 @@
             <li><a href="#" class="nav-link px-3 link-secondary">Contact us</a></li>
             <li><a href="#" class="nav-link px-3 link-secondary">Blog</a></li>
         </ul>
-        <a href="#" class="icon cart"></a>
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 search-form" role="search">
-            <div class="input-group">
-                <span class="input-group-text" id="search-addon">
-                    <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
-                        <path
-                            d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z"
-                            stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round"
-                            stroke-linejoin="round">
-                        </path>
-                    </svg>
-                </span>
-                <input type="text" class="form-control" placeholder="Search" aria-label="Search"
-                    aria-describedby="search-addon">
+        <div class="col-12 col-lg-auto">
+            <div class="d-flex align-items-center w-100">
+                <form class="me-lg-3 search-form flex-grow-1" role="search">
+                    <div class="input-group">
+                        <span class="input-group-text" id="search-addon">
+                            <i class="icon search"></i>
+                        </span>
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                            aria-describedby="search-addon">
+                    </div>
+                </form>
+                <a href="#" class="icon cart mx-3"></a>
+                <div class="dropdown text-end">
+                    <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <!-- <img src="assets/images/google.svg" alt="mdo" width="32" height="32" class="rounded-circle"> -->
+                        <i class="icon person"></i>
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                        <li *ngIf="!isLoggedIn"><a class="dropdown-item" routerLink="/signin">Sign In</a></li>
+                        <li *ngIf="!isLoggedIn"><a class="dropdown-item" routerLink="/register">Sign Up</a></li>
+                        <li *ngIf="isLoggedIn"><a class="dropdown-item" routerLink="/profile">Account</a></li>
+                        <li *ngIf="isLoggedIn">
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li *ngIf="isLoggedIn"><button class="dropdown-item" (click)="logout()">Sign out</button></li>
+                    </ul>
+                </div>
             </div>
-        </form>
-        <div class="dropdown text-end">
-            <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <!-- <img src="assets/images/google.svg" alt="mdo" width="32" height="32" class="rounded-circle"> -->
-                 <i class="icon person"></i>
-            </a>
-            <ul class="dropdown-menu text-small">
-                <li *ngIf="!isLoggedIn"><a class="dropdown-item" routerLink="/signin">Sign In</a></li>
-                <li *ngIf="!isLoggedIn"><a class="dropdown-item" routerLink="/register">Sign Up</a></li>
-                <li *ngIf="isLoggedIn"><a class="dropdown-item" routerLink="/profile">Account</a></li>
-                <li *ngIf="isLoggedIn">
-                    <hr class="dropdown-divider">
-                </li>
-                <li *ngIf="isLoggedIn"><button class="dropdown-item" (click)="logout()">Sign out</button></li>
-            </ul>
         </div>
     </header>
 </div>
