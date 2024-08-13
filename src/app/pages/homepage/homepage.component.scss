@@ -4,8 +4,31 @@
     ._caption{
         position: absolute;
         top: 50%;
-        left: 20%;
+        left: 28%;
         transform: translate(-50%, -50%);
-        font-size: 1rem;
+        font-size: 3.7rem;
+        font-weight: bold;
+        color: #fff;
+        
+        h5 {
+            font-size: 3rem;
+            font-weight: 300;
+        }
     }
 }
+
+// @media only screen and (max-width: 567px) {}
+@media only screen and (max-width: 767px) {}
+@media only screen and (max-width: 992px) {
+    ._item {
+        ._caption {
+            font-size: 5vw;
+            h5 {
+                font-size: 4vw;
+            }
+        }
+    }
+}
+// @media only screen and (min-width: 768px) {}
+// @media only screen and (min-width: 992px) {}
+// @media only screen and (min-width: 1200px) {}
