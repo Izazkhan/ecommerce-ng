@@ -17,6 +17,16 @@
     }
 }
 
+.services {
+    min-height: 100px;
+    padding: 20px 0;
+    font-size: .9rem;
+    background-color: #fff8f0;
+    ._desc {
+        color: #979088
+    }
+}
+
 // @media only screen and (max-width: 567px) {}
 @media only screen and (max-width: 767px) {}
 @media only screen and (max-width: 992px) {
