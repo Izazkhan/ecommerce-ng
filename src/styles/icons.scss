@@ -33,6 +33,21 @@
     height: 41px;
     background-position: 0 -87px;
 }
+.warranty {
+    width: 42px;
+    height: 42px;
+    background-position: -43px -87px;
+}
+.free-shipping {
+    width: 42px;
+    height: 42px;
+    background-position: calc(-43px * 2) -87px;
+}
+.twenty-four-seven {
+    width: 42px;
+    height: 42px;
+    background-position: calc(-43px * 3) -87px;
+}
 
 .lock {
     width: 60px;

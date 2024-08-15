@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
-import { HomepageComponent } from './pages/homepage/homepage.component';
+import { CategoryComponent } from './pages/category/category.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { ProfileComponent } from './pages/user/profile/profile.component';
 import { authGuard } from './helpers/guards/auth.guard';
@@ -16,7 +16,7 @@ export const routes: Routes = [
         component: AppLayoutComponent,
         children: [
             {
-                path: '', component: HomepageComponent
+                path: 'category', component: CategoryComponent
             },
             {
                 path: 'profile', component: ProfileComponent, canActivate: [authGuard]

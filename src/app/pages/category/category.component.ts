@@ -2,12 +2,12 @@ import { CommonModule, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-homepage',
+  selector: 'app-category',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.scss'
+  templateUrl: './category.component.html',
+  styleUrl: './category.component.scss'
 })
-export class HomepageComponent {
+export class CategoryComponent {
 
 }
