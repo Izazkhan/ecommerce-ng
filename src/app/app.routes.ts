@@ -1,35 +1,35 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './pages/auth/login/login.component';
-import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
-import { CategoryComponent } from './pages/category/category.component';
-import { RegisterComponent } from './pages/auth/register/register.component';
-import { ProfileComponent } from './pages/user/profile/profile.component';
-import { authGuard } from './helpers/guards/auth.guard';
-import { AuthLayoutComponent } from './pages/auth/auth-layout/auth-layout.component';
-import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
-import { ResetPasswordComponent } from './pages/auth/reset-password/reset-password.component';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+const LoginComponent = () => import('./pages/auth/login/login.component').then(m => m.LoginComponent);
+const AppLayoutComponent = () => import('./layouts/app-layout/app-layout.component').then(m => m.AppLayoutComponent);
+const CategoryComponent = () => import('./pages/category/category.component').then(m => m.CategoryComponent);
+const RegisterComponent = () => import('./pages/auth/register/register.component').then(m => m.RegisterComponent);
+const ProfileComponent = () => import('./pages/user/profile/profile.component').then(m => m.ProfileComponent);
+const authGuard = () => import('./helpers/guards/auth.guard').then(m => m.authGuard);
+const AuthLayoutComponent = () => import('./pages/auth/auth-layout/auth-layout.component').then(m => m.AuthLayoutComponent);
+const ForgotPasswordComponent = () => import('./pages/auth/forgot-password/forgot-password.component').then(m => m.ForgotPasswordComponent);
+const ResetPasswordComponent = () => import('./pages/auth/reset-password/reset-password.component').then(m => m.ResetPasswordComponent);
+const PageNotFoundComponent = () => import('./pages/page-not-found/page-not-found.component').then(m => m.PageNotFoundComponent);
 
 export const routes: Routes = [
     {
         path: '',
-        component: AppLayoutComponent,
+        loadComponent: AppLayoutComponent,
         children: [
             {
-                path: 'category', component: CategoryComponent
+                path: 'category', loadComponent: CategoryComponent
             },
             {
-                path: 'profile', component: ProfileComponent, canActivate: [authGuard]
+                path: 'profile', loadComponent: ProfileComponent, canActivate: [authGuard]
             }
         ]
     }, {
         path: '',
-        component: AuthLayoutComponent,
+        loadComponent: AuthLayoutComponent,
         children: [
             {
                 path: 'signin',
                 title: 'Login',
-                component: LoginComponent
+                loadComponent: LoginComponent
             },
             {
                 path: 'login',
@@ -39,19 +39,19 @@ export const routes: Routes = [
             {
                 path: 'register',
                 title: 'Register',
-                component: RegisterComponent
+                loadComponent: RegisterComponent
             },
             {
                 path: 'forgot-password',
                 title: 'Forgot Password',
-                component: ForgotPasswordComponent
+                loadComponent: ForgotPasswordComponent
             },
             {
                 path: 'reset-password/:token',
                 title: 'Reset Password',
-                component: ResetPasswordComponent
+                loadComponent: ResetPasswordComponent
             }
         ]
     },
-    { path: '**', component: PageNotFoundComponent }
+    { path: '**', loadComponent: PageNotFoundComponent }
 ];

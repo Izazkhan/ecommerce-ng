@@ -4,22 +4,26 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModu
 import { Router, RouterLink } from '@angular/router';
 import { Observer } from 'rxjs';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { StateService } from 'src/app/services/global-state/state.service';
+import { CounterComponent } from '../counter/counter.component';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule, NgIf],
+  imports: [RouterLink, ReactiveFormsModule, NgIf, CounterComponent],
   templateUrl: './register.component.html',
-  styleUrls: ['../../../../styles/auth-styles.scss', './register.component.scss']
+  styleUrls: ['../../../../styles/auth-styles.scss', './register.component.scss'],
+  providers: [StateService]
 })
 export class RegisterComponent {
-
+  counter: number = 0;
   registrationForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private stateService: StateService
   ) {
     this.registrationForm = this.fb.group({
       name: ['', Validators.required],
@@ -29,6 +33,10 @@ export class RegisterComponent {
     },
       { validators: this.passwordMatchValidator }
     );
+
+    this.stateService.currentCounter$.subscribe((value) => {
+      this.counter = value;
+    })
   }
 
   // custom validator, for password match
