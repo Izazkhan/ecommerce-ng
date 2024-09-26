@@ -12,10 +12,9 @@ import { Store } from '@ngrx/store';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule, NgIf, CommonModule],
+  imports: [RouterLink, ReactiveFormsModule, NgIf, CommonModule, CounterComponent],
   templateUrl: './register.component.html',
   styleUrls: ['../../../../styles/auth-styles.scss', './register.component.scss'],
-  providers: [StateService]
 })
 export class RegisterComponent {
   counter: number = 0;
@@ -41,6 +40,10 @@ export class RegisterComponent {
     this.stateService.currentCounter$.subscribe((value) => {
       this.counter = value;
     })
+  }
+
+  inc() {
+    this.stateService.incrementCounter();
   }
 
   increment() {

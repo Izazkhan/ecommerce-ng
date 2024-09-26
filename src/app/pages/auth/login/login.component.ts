@@ -12,9 +12,9 @@ import { increment } from 'src/app/store/counter/counter.actions';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule, CommonModule],
+  imports: [RouterLink, ReactiveFormsModule, CommonModule, CounterComponent],
   templateUrl: './login.component.html',
-  styleUrls:  ['./login.component.scss']
+  styleUrls:  ['./login.component.scss'],
 })
 export class LoginComponent {
 
@@ -27,6 +27,7 @@ export class LoginComponent {
     private authService: AuthService,
     private router: Router,
     private route: ActivatedRoute,
+    private stateService: StateService,
     private store: Store<{count: number}>
   ) {
     this.loginForm = this.fb.group({
@@ -42,6 +43,10 @@ export class LoginComponent {
 
   increment() {
     this.store.dispatch(increment());
+  }
+
+  inc() {
+    this.stateService.incrementCounter();
   }
 
   onLogin() {

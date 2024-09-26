@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { StateService } from 'src/app/services/global-state/state.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { StateService } from 'src/app/services/global-state/state.service';
   imports: [],
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.scss',
-  providers: [StateService]
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CounterComponent {
   counter: number = 0;
