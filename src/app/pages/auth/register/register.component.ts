@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -6,11 +6,13 @@ import { Observer } from 'rxjs';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { StateService } from 'src/app/services/global-state/state.service';
 import { CounterComponent } from '../counter/counter.component';
+import { increment } from 'src/app/store/counter/counter.actions';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule, NgIf, CounterComponent],
+  imports: [RouterLink, ReactiveFormsModule, NgIf, CommonModule],
   templateUrl: './register.component.html',
   styleUrls: ['../../../../styles/auth-styles.scss', './register.component.scss'],
   providers: [StateService]
@@ -19,11 +21,13 @@ export class RegisterComponent {
   counter: number = 0;
   registrationForm: FormGroup;
 
+  counter$ = this.store.select('count');
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private stateService: StateService
+    private stateService: StateService,
+    private store: Store<{count: number}>
   ) {
     this.registrationForm = this.fb.group({
       name: ['', Validators.required],
@@ -37,6 +41,10 @@ export class RegisterComponent {
     this.stateService.currentCounter$.subscribe((value) => {
       this.counter = value;
     })
+  }
+
+  increment() {
+    this.store.dispatch(increment());
   }
 
   // custom validator, for password match

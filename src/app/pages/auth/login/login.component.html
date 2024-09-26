@@ -1,5 +1,6 @@
 <div class="row d-flex justify-content-center align-items-center vh-100">
-    <app-counter></app-counter>
+    <p>{{ counter$ | async }}</p>
+    <button (click)="increment()">Inc</button>
     <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card">
             <div class="card-body px-5">
